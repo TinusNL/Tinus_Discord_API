@@ -17,8 +17,10 @@ server_scripts {
     -- Configuration
     'Config.lua',
     -- Code
-    'Server/API.lua'
+    'API.lua'
 }
+
+file 'postals.json'
 
 server_exports {
     -- Role Exports

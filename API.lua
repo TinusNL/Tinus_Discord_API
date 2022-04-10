@@ -21,6 +21,31 @@ Citizen.CreateThread(function()
 end)
 
 -- Base
+function GetPostal(Coords)
+    local RawPostals = LoadResourceFile(GetCurrentResourceName(), "postals.json")
+    local Postals = json.decode(RawPostals)
+    local Nearest = nil
+    local CoordsX, CoordsY = table.unpack(Coords)
+
+	local ndm = -1
+	local ni = -1
+	for i, p in ipairs(Postals) do
+		local dm = (CoordsX - p.x) ^ 2 + (CoordsY - p.y) ^ 2
+		if ndm == -1 or dm < ndm then
+			ni = i
+			ndm = dm
+		end
+	end
+
+	if ni ~= -1 then
+		local nd = math.sqrt(ndm)
+		Nearest = {i = ni, d = nd}
+	end
+
+	Nearest = Postals[Nearest.i].code
+	return Nearest
+end
+
 function GetIdentifier(Source, Identifier, GSub)
     if GetPlayerPing(Source) > 0 then
         local FoundIdentifier = nil
@@ -248,7 +273,7 @@ function SendLog(KeyName, Message, Options)
             elseif CurrentName == "Ip" then
                 CurrentField.value = GetIdentifier(CurrentValue, "ip", true)
             elseif CurrentName == "Postal" then
-                CurrentField.value = "****"
+                CurrentField.value = GetPostal(CurrentValue)
             else
                 ValidOption = false
             end
