@@ -109,11 +109,11 @@ exports.Tinus_Discord_API:SendLog("TestLogs", "You are reading the tutorial!", {
  -  **KeyName:** The KeyName to that was used with `CreateLog`.
  -  **Message:** Basic description to give tot the embed.
  -  **Options:** Options to add to the embed. `{Name, Value, Inline}`
-		 - **PlayerId:** Source
-		 - **SteamId:** Source
-		 - **DiscordId:** Source
-		 - **LiveId:** Source
-		 - **LicenseId:** Source
-		 - **XblId:** Source
-		 - **Ip:** Source
-		 - **Postal:** Vector3
+	 - **PlayerId:** Source
+	 - **SteamId:** Source
+	 - **DiscordId:** Source
+	 - **LiveId:** Source
+	 - **LicenseId:** Source
+	 - **XblId:** Source
+	 - **Ip:** Source
+	 - **Postal:** Vector3
