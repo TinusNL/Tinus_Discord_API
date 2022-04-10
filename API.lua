@@ -182,7 +182,7 @@ function HasUserRole(DiscordId, RoleId)
     local Info = GetDiscordInfo(DiscordId)
 
     for Index, CurrentRole in pairs(Info.roles) do
-        if RoleId == CurrentRole then
+        if RoleId == tonumber(CurrentRole) then
             return true
         end
     end
