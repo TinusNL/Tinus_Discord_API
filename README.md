@@ -80,7 +80,7 @@ print(UserTag) -- Tinus#4202
 
 ## Webhook
 ### CreateLog
-You will have to use this first to asign a `KeyName` to your Webhook URL.
+You will have to use this first to assign a `KeyName` to your Webhook URL.
 ```lua
 exports.Tinus_Discord_API:CreateLog(KeyName, URL, Username, Avatar)
 
